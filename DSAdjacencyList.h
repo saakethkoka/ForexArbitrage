@@ -2,14 +2,13 @@
 // Created by Saaketh Koka on 3/25/21.
 //
 
-#ifndef PA04_AMAZING_DSADJACENCYLIST_H
-#define PA04_AMAZING_DSADJACENCYLIST_H
 #include "DLList.h"
+#pragma once
 
 template<class T>
 class DSAdjacencyList{
 private:
-    DLList<DLList<T>> list;
+    DLList<DLList<T> > list;
 public:
     void addTwoWayEdge(T vertex1, T vertex2);
     void addOneWayEdge(T startVertex, T endVertex);
@@ -33,7 +32,7 @@ void DSAdjacencyList<T>::addTwoWayEdge(T vertex1, T vertex2) {
         list.pushBack(listToAdd);
     }
 
-    DLListNode<DLList<T>> *outerNode = list.front;
+    DLListNode<DLList<T> > *outerNode = list.front;
     while(outerNode->data.front->data != vertex1){
         outerNode = outerNode->next;
     }
@@ -69,7 +68,7 @@ void DSAdjacencyList<T>::addOneWayEdge(T startVertex, T endVertex) {
         list.pushBack(listToAdd);
     }
 
-    DLListNode<DLList<T>> *outerNode = list.front;
+    DLListNode<DLList<T> > *outerNode = list.front;
     while(outerNode->data.front->data != startVertex){
         outerNode = outerNode->next;
     }
@@ -82,7 +81,7 @@ void DSAdjacencyList<T>::addOneWayEdge(T startVertex, T endVertex) {
 
 template<class T>
 bool DSAdjacencyList<T>::containsVertex(T vertex) {
-    DLListNode<DLList<T>> *node = list.front;
+    DLListNode<DLList<T> > *node = list.front;
     while(node != nullptr){
         if(node->data.front->data == vertex){
             return true;
@@ -94,7 +93,7 @@ bool DSAdjacencyList<T>::containsVertex(T vertex) {
 
 template<class T>
 void DSAdjacencyList<T>::printList() {
-    DLListNode<DLList<T>> *outerNode = list.front;
+    DLListNode<DLList<T> > *outerNode = list.front;
     DLListNode<T> *innerNode;
     while(outerNode != nullptr){
         innerNode = outerNode->data.front;
@@ -109,7 +108,7 @@ void DSAdjacencyList<T>::printList() {
 
 template<class T>
 DLListNode<T> *DSAdjacencyList<T>::getVertexPtr(T val) {
-    DLListNode<DLList<T>> *outerNode = list.front;
+    DLListNode<DLList<T> > *outerNode = list.front;
     while(outerNode != nullptr){
         if(outerNode->data.front->data == val){
             return outerNode->data.front->next;
@@ -120,4 +119,3 @@ DLListNode<T> *DSAdjacencyList<T>::getVertexPtr(T val) {
 }
 
 
-#endif //PA04_AMAZING_DSADJACENCYLIST_H

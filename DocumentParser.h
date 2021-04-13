@@ -2,15 +2,23 @@
 // Created by Saaketh Koka on 4/13/21.
 //
 
-#ifndef FOREXARBITRAGE_DOCUMENTPARSER_H
-#define FOREXARBITRAGE_DOCUMENTPARSER_H
+
+
+#pragma once
+#include "Currency.h"
+#include <sstream>
+#include <fstream>
+#include "DSAdjacencyList.h"
+
 
 
 class DocumentParser {
 private:
+DSAdjacencyList<Currency> currencyMatrix;
 
+public:
+    DocumentParser(std::string filename);
+    void parseLine(std::string& line);
 
 };
 
-
-#endif //FOREXARBITRAGE_DOCUMENTPARSER_H

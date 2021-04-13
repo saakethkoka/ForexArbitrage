@@ -3,4 +3,4 @@ project(ForexArbitrage)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(ForexArbitrage main.cpp DocumentParser.cpp DocumentParser.h DSAdjacencyList.h DLListNode.h DLList.h)
+add_executable(ForexArbitrage main.cpp DocumentParser.cpp Currency.h DocumentParser.h DSAdjacencyList.h DLListNode.h DLList.h Currency.cpp)

@@ -7,6 +7,7 @@
 #include "DLListNode.h"
 #include <stdexcept>
 #include <exception>
+#pragma once
 
 template<class T>
 class DLList{

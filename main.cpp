@@ -1,6 +1,7 @@
 #include <iostream>
+#include "DocumentParser.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    DocumentParser parser("excelFile.csv");
     return 0;
 }
