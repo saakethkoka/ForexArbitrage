@@ -20,6 +20,7 @@ std::vector<std::string> vect;
 public:
     DocumentParser(std::string filename);
     void parseLine(std::string& line);
+    DSAdjacencyList<Currency>& getAdjacencyList();
 
 };
 

@@ -1,7 +1,6 @@
 #include <iostream>
-#include "DocumentParser.h"
-
+#include "Pathfinder.h"
 int main() {
-    DocumentParser parser("excelFile.csv");
+    Pathfinder pf("excelFile.csv");
     return 0;
 }

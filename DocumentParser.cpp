@@ -51,3 +51,7 @@ void DocumentParser::parseLine(std::string& line){
 
 
 }
+
+DSAdjacencyList<Currency> &DocumentParser::getAdjacencyList() {
+    return currencyMatrix;
+}
