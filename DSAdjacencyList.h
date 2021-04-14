@@ -62,11 +62,11 @@ void DSAdjacencyList<T>::addOneWayEdge(T startVertex, T endVertex) {
         listToAdd.pushBack(startVertex);
         list.pushBack(listToAdd);
     }
-    if(!containsVertex(endVertex)){
-        DLList<T> listToAdd;
-        listToAdd.pushBack(endVertex);
-        list.pushBack(listToAdd);
-    }
+//    if(!containsVertex(endVertex)){
+//        DLList<T> listToAdd;
+//        listToAdd.pushBack(endVertex);
+//        list.pushBack(listToAdd);
+//    }
 
     DLListNode<DLList<T> > *outerNode = list.front;
     while(outerNode->data.front->data != startVertex){

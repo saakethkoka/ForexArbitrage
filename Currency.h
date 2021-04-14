@@ -3,6 +3,7 @@
 //
 #pragma once
 #include <string>
+#include <iostream>
 
 class Currency{
 private:
@@ -12,10 +13,12 @@ private:
 public:
     Currency(const std::string& name = "",const double& rate = 1.0);
     bool operator== (const Currency& other) const;
+    bool operator!= (const Currency& other) const;
+
+    friend std::ostream& operator<< (std::ostream& out, const Currency& data);
+
 
     std::string& get_name();
     double& get_ratio();
 
 };
-
-

@@ -9,12 +9,13 @@
 #include <sstream>
 #include <fstream>
 #include "DSAdjacencyList.h"
-
+#include <vector>
 
 
 class DocumentParser {
 private:
 DSAdjacencyList<Currency> currencyMatrix;
+std::vector<std::string> vect;
 
 public:
     DocumentParser(std::string filename);
