@@ -4,10 +4,11 @@
 
 #include <string>
 #include "DocumentParser.h"
-
+#include <vector>
 class Pathfinder {
 private:
     DSAdjacencyList<Currency> currencyList;
+    std::vector<Currency> currPath;
 
 
 public:
