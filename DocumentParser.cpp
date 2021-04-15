@@ -24,7 +24,6 @@ DocumentParser::DocumentParser(std::string filename) {
         i++;
     }
     infs.close();
-    currencyMatrix.printList();
 }
 
 

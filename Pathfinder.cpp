@@ -15,7 +15,7 @@ Pathfinder::Pathfinder(const std::string &inputFile) : currPath(), bestPath() {
 void Pathfinder::findPath() {
     currPath.push_back(base);
     DLListNode<Currency> *currNode = currencyList.getVertexPtr(base);
-    solve(1, currNode);
+  //  solve(1, currNode);
 }
 
 void Pathfinder::solve(double rate, DLListNode<Currency> *currNode) {
