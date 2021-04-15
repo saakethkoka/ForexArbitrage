@@ -3,18 +3,24 @@
 //
 
 #include <string>
-#include "DocumentParser.h"
 #include <vector>
+#include "DocumentParser.h"
 class Pathfinder {
 private:
-    DSAdjacencyList<Currency> currencyList;
-    std::vector<Currency> currPath;
-
+    DSAdjacencyList<Currency> currencyList; //This is the adjacency list of the currency pairs
+    std::vector<Currency> currPath; //This is the most recently calculated path
+    std::vector<Currency> bestPath; //This is the best path (one directional)
+    Currency base; //This is the currency from which the code begins and ends
+    double bestROI; //This is the amoutn that the best path returns in one walk
+    void solve(double rate, DLListNode<Currency> *currNode);
+    int findInVect(Currency c);
+    bool isInCurrPath(Currency c);
 
 public:
-    Pathfinder(const std::string& inputFile);
-    void findPath() const;
-    void printPath() const;
+    Pathfinder(const std::string& inputFile); //constructor
+    void findPath(); //This generates values for the bestROI and bestPath
+    void printPath(); //This generates the output for the program
+
 
 };
 
