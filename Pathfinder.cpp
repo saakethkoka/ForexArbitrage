@@ -9,11 +9,11 @@ Pathfinder::Pathfinder(const std::string &inputFile) : currPath(), bestPath() {
     this->currencyList = parser.getAdjacencyList();
     bestROI = 1;
     base = Currency("USD",1);
+    currPath.push_back(base);
     findPath();
 }
 
 void Pathfinder::findPath() {
-
 }
 
 int Pathfinder::findInVect(Currency c) {
