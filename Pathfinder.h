@@ -12,9 +12,9 @@ private:
     std::vector<Currency> bestPath; //This is the best path (one directional)
     Currency base; //This is the currency from which the code begins and ends
     double bestROI; //This is the amoutn that the best path returns in one walk
-    void solve(double rate, DLListNode<Currency> *currNode);
     int findInVect(Currency c);
     bool isInCurrPath(Currency c);
+    bool isBestPath(); //This method checks if the currPath has a larger ratio than bestPath. If so, it swaps the two
 
 public:
     Pathfinder(const std::string& inputFile); //constructor

@@ -13,38 +13,7 @@ Pathfinder::Pathfinder(const std::string &inputFile) : currPath(), bestPath() {
 }
 
 void Pathfinder::findPath() {
-    currPath.push_back(base);
-    DLListNode<Currency> *currNode = currencyList.getVertexPtr(base);
-  //  solve(1, currNode);
-}
 
-void Pathfinder::solve(double rate, DLListNode<Currency> *currNode) {
-    std::cout << currPath.size() << std::endl;
-    currPath.push_back(currNode->data);
-    rate *= currNode->data.get_ratio();
-    if(currNode->data == base && currPath.size() != 1){
-        if(bestROI < rate){
-            bestROI = rate;
-            bestPath = currPath;
-        }
-        currPath.pop_back();
-        return;
-    }
-    if(currPath.empty()){
-        return;
-    }
-
-    while(currNode != nullptr){
-
-        if(isInCurrPath(currNode->data)){
-            currNode = currNode->next;
-            continue;
-        }
-
-        currNode = currencyList.getVertexPtr(currNode->data);
-        solve(rate, currNode);
-        currNode = currNode->next;
-    }
 }
 
 int Pathfinder::findInVect(Currency c) {
@@ -70,4 +39,17 @@ void Pathfinder::printPath() {
         std::cout << c << std::endl;
     }
     std::cout << "Rate: " << bestROI << std::endl;
+}
+
+bool Pathfinder::isBestPath() { //Runs in O(n) time
+    double currRatio = 1;
+    for(auto &c: currPath){
+        currRatio *= c.get_ratio();
+    }
+    if(currRatio > bestROI){
+        bestPath = currPath;
+        bestROI = currRatio;
+        return true;
+    }
+    return false;
 }
