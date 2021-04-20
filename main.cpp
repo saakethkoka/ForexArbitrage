@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Pathfinder.h"
-int main() {
-    Pathfinder pf("excelFile2.csv");
+int main(int argc, char* argv[]) {
+    Pathfinder pf(argv[1]);
     pf.printPath();
     return 0;
 }

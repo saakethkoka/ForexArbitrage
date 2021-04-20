@@ -11,8 +11,10 @@ DocumentParser::DocumentParser(std::string filename) {
         std::cout << "File not opened: " << filename << std::endl;
         assert(false);
     }
-    std::string first_line;
-    getline(infs, first_line); //reads the first line which is not processed
+    std::string trash;
+    getline(infs, trash); //reads the first line which is not processed
+    getline(infs, trash); //reads the second line which is not processed
+    getline(infs, trash); //reads the thrid line which is not processed
     int i = 0;
     while(!infs.eof()){
         if(infs.eof()){
