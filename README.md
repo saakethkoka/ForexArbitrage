@@ -3,7 +3,7 @@ This project serves as a proof of concept for an automated Forex Arbitrage machi
 The project takes a command line input of a csv files which represent a currency matrix and following a prompt to the user for a starting account balance, outputs a series of trades which result in an ending account balance and the profit made.
 The program utilizes recursive backtracking to identify the chain of transactions which results in the highest return for each currency matrix and proceeds to simulate the execution of each of those matrices once.
 
-###Setup
+### Setup
 As a precondition, ensure that your system has C++ and is able to execute CLion files. To check this type:
 ```
 cmake --version
@@ -21,8 +21,10 @@ cmake ..
 make
 ./ForexArbitrage excelFile3.csv
 ```
+After entering these commands into the terminal, you will be prompted to enter a value to invest. Enter an integer quantity. 
 
-###More Information
+### More Information:
+
 https://en.wikipedia.org/wiki/Triangular_arbitrage
 https://www.investopedia.com/terms/forex/f/forex-arbritrage.asp
 

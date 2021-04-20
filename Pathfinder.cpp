@@ -18,7 +18,7 @@ Pathfinder::Pathfinder(const std::string &inputFile) : currPath(), bestPath() {
     }
 }
 
-void Pathfinder::findPath(DLListNode<Currency>* node) {
+void Pathfinder::findPath(DLListNode<Currency>*& node) {
     if(node == nullptr){
         return;
     }
@@ -47,7 +47,7 @@ void Pathfinder::findPath(DLListNode<Currency>* node) {
     }
 }
 
-int Pathfinder::findInVect(Currency c) {
+int Pathfinder::findInVect(Currency& c) {
     for(int i = 0; i < currPath.getSize(); i++){
         if(currPath.at(i) == c){
             return i;
@@ -56,7 +56,7 @@ int Pathfinder::findInVect(Currency c) {
     return -1;
 }
 
-bool Pathfinder::isInCurrPath(Currency c) {
+bool Pathfinder::isInCurrPath(Currency& c) {
     for(int i = 0; i < currPath.getSize(); i++){
         if(c == currPath.at(i)){
             return true;
