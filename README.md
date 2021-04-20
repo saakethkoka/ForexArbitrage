@@ -21,3 +21,8 @@ cmake3 ..
 make
 ./ForexArbitrage excelFile3.csv
 ```
+
+###More Information
+https://en.wikipedia.org/wiki/Triangular_arbitrage
+https://www.investopedia.com/terms/forex/f/forex-arbritrage.asp
+
