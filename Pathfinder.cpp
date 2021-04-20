@@ -65,11 +65,14 @@ bool Pathfinder::isInCurrPath(Currency c) {
     return false;
 }
 
-void Pathfinder::printPath() {
-    std::cout << bestROI << std::endl;
+void Pathfinder::printPath(int amount) {
+    double curr = amount;
     for(int i = 0; i < bestPath.getSize(); i++){
-        std::cout << bestPath.at(i) << std::endl;
+      //  std::cout << bestPath.at(i) << std::endl;
+      curr *= bestPath.at(i).get_ratio();
+      std::cout << curr << " " << bestPath.at(i).get_name() << std::endl;
     }
+    std::cout << "Your profit is: $" << (bestROI-1) * amount << std::endl;
 }
 
 bool Pathfinder::isBestPath() { //Runs in O(n) time
@@ -91,12 +94,3 @@ bool Pathfinder::isBestPath() { //Runs in O(n) time
     }
     return false;
 }
-/*
-Pathfinder::~Pathfinder() {
-    std::vector<int> f;
-    std::cout << "Sifdsa" << std::endl;
-    currPath.clear();
-
-
-}
- */

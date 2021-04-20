@@ -1,6 +1,6 @@
 # ForexArbitrage (CSE 2353 Final Project)
 This project serves as a proof of concept for an automated Forex Arbitrage machine.
-The project takes an input of a series of csv files in a directory which represent a currency matrix and following prompt to the user for a starting account balance, outputs an ending balance and a ROI for a series of Arbitrages done on the data. 
+The project takes a command line input of a csv files which represent a currency matrix and following a prompt to the user for a starting account balance, outputs a series of trades which result in an ending account balance and the profit made.
 The program utilizes recursive backtracking to identify the chain of transactions which results in the highest return for each currency matrix and proceeds to simulate the execution of each of those matrices once.
 
 ###Setup
@@ -17,7 +17,7 @@ Following this, you will need to run the program.
 cd ForexArbitrage
 mkdir executable
 cd executable
-cmake3 ..
+cmake ..
 make
 ./ForexArbitrage excelFile3.csv
 ```
