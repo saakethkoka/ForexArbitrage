@@ -19,5 +19,5 @@ mkdir executable
 cd executable
 cmake3 ..
 make
-./a.out excelFile.csv
+./ForexArbitrage excelFile3.csv
 ```
