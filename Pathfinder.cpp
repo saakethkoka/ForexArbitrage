@@ -7,7 +7,6 @@
 Pathfinder::Pathfinder(const std::string &inputFile) : currPath(), bestPath() {
     DocumentParser parser(inputFile);
     this->currencyList = parser.getAdjacencyList();
-    numIters = 0;
     bestROI = 1;
     base = Currency("USD",1);
     currPath.pushBack(base);
@@ -20,11 +19,6 @@ Pathfinder::Pathfinder(const std::string &inputFile) : currPath(), bestPath() {
 }
 
 void Pathfinder::findPath(DLListNode<Currency>* node) {
-    numIters++;
-    if(numIters > 50000){
-        return;
-    }
-    std::cout << numIters << std::endl;
     if(node == nullptr){
         return;
     }

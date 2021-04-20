@@ -5,7 +5,7 @@
 #include "DocumentParser.h"
 
 DocumentParser::DocumentParser(std::string filename) {
-    vect = {"USD","EUR","GBP","CNY","CHF","JPY","AUD"};
+    vect = {"USD","EUR","GBP","CNY","CHF","JPY","AUD","CAD","HKD","SGD"};
     std::fstream infs(filename);
     if(!infs.is_open()){
         std::cout << "File not opened: " << filename << std::endl;
@@ -29,7 +29,7 @@ DocumentParser::DocumentParser(std::string filename) {
 
 void DocumentParser::parseLine(std::string& line){
     short indexOfComma = line.find(",");
-    for(int j = 0; j < 7; j++){
+    for(int j = 0; j < 10; j++){
         line.replace(indexOfComma, 1, " "); // Removes commas from the line
         indexOfComma = line.find(",", indexOfComma); // Finds the 6 commas
     }
@@ -37,7 +37,7 @@ void DocumentParser::parseLine(std::string& line){
 
     std::string currencyOfOrgin;
     inss >> currencyOfOrgin;
-    for(int q = 0; q < 7; q++){
+    for(int q = 0; q < 10; q++){
         std::string eachRateString;
         inss >> eachRateString;
         if(eachRateString == "-"){

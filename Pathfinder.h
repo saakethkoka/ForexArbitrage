@@ -15,7 +15,6 @@ private:
     int findInVect(Currency c);
     bool isInCurrPath(Currency c);
     bool isBestPath(); //This method checks if the currPath has a larger ratio than bestPath. If so, it swaps the two
-    int numIters;
 
 public:
     Pathfinder(const std::string& inputFile); //constructor
