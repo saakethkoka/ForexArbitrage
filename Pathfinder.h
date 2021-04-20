@@ -8,8 +8,8 @@
 class Pathfinder {
 private:
     DSAdjacencyList<Currency> currencyList; //This is the adjacency list of the currency pairs
-    std::vector<Currency> currPath; //This is the most recently calculated path
-    std::vector<Currency> bestPath; //This is the best path (one directional)
+    DLList<Currency> currPath; //This is the most recently calculated path
+    DLList<Currency> bestPath; //This is the best path (one directional)
     Currency base; //This is the currency from which the code begins and ends
     double bestROI; //This is the amoutn that the best path returns in one walk
     int findInVect(Currency c);

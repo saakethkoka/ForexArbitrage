@@ -10,19 +10,12 @@ Pathfinder::Pathfinder(const std::string &inputFile) : currPath(), bestPath() {
     numIters = 0;
     bestROI = 1;
     base = Currency("USD",1);
-    currPath.push_back(base);
+    currPath.pushBack(base);
     DLListNode<Currency>* nextNode = this->currencyList.getVertexPtr(base);
-    while(nextNode != nullptr){
-        if(currPath.empty()){
-            return;
-        }
+    while(nextNode != nullptr && ! currPath.isEmpty()){
         findPath(nextNode);
-        currPath.pop_back();
+        currPath.popBack();
         nextNode = nextNode->next;
-    }
-    std::cout << bestROI << std::endl;
-    for(const auto &c : bestPath){
-        std::cout << c << std::endl;
     }
 }
 
@@ -37,32 +30,32 @@ void Pathfinder::findPath(DLListNode<Currency>* node) {
     }
 
     if(node->data.get_name() == "USD"){
-        currPath.push_back(node->data);
+        currPath.pushBack(node->data);
         isBestPath();
         return;
     }
     if(isInCurrPath(node->data)){
+        currPath.pushBack(node->data);
         return;
     }
-    currPath.push_back(node->data);
+    currPath.pushBack(node->data);
     DLListNode<Currency>* nextNode = this->currencyList.getVertexPtr(node->data);
     while(nextNode != nullptr){
-        if(currPath.empty()){
+        if(currPath.isEmpty()){
             return;
         }
         findPath(nextNode);
-        if(currPath.empty()){
+        if(currPath.isEmpty()){
             return;
         }
-        currPath.pop_back();
+        currPath.popBack();
         nextNode = nextNode->next;
     }
-
 }
 
 int Pathfinder::findInVect(Currency c) {
-    for(int i = 0; i < currPath.size(); i++){
-        if(currPath[i] == c){
+    for(int i = 0; i < currPath.getSize(); i++){
+        if(currPath.at(i) == c){
             return i;
         }
     }
@@ -70,8 +63,8 @@ int Pathfinder::findInVect(Currency c) {
 }
 
 bool Pathfinder::isInCurrPath(Currency c) {
-    for(auto &d : currPath){
-        if(c == d){
+    for(int i = 0; i < currPath.getSize(); i++){
+        if(c == currPath.at(i)){
             return true;
         }
     }
@@ -79,18 +72,18 @@ bool Pathfinder::isInCurrPath(Currency c) {
 }
 
 void Pathfinder::printPath() {
-    for(auto &c : bestPath){
-        std::cout << c << std::endl;
+    std::cout << bestROI << std::endl;
+    for(int i = 0; i < bestPath.getSize(); i++){
+        std::cout << bestPath.at(i) << std::endl;
     }
-    std::cout << "Rate: " << bestROI << std::endl;
 }
 
 bool Pathfinder::isBestPath() { //Runs in O(n) time
     double currRatio = 1;
-    for(int i = 0; i < currPath.size() - 1; i++){
-        DLListNode<Currency>* node = currencyList.getVertexPtr(currPath[i]);
+    for(int i = 0; i < currPath.getSize() - 1; i++){
+        DLListNode<Currency>* node = currencyList.getVertexPtr(currPath.at(i));
         while(node != nullptr){
-            if(node->data == currPath[i + 1]){
+            if(node->data == currPath.at(i + 1)){
                 currRatio *= node->data.get_ratio();
                 break;
             }
