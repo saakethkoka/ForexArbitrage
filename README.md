@@ -4,10 +4,20 @@ The project takes an input of a series of csv files in a directory which represe
 The program utilizes recursive backtracking to identify the chain of transactions which results in the highest return for each currency matrix and proceeds to simulate the execution of each of those matrices once.
 
 ###Setup
-As a precondition, ensure that your system has C++ and is able to execute CLion files.
+As a precondition, ensure that your system has C++ and is able to execute CLion files. To check this type:
+```
+cmake --version
+```
 Next, you need to download the repository from Github. This can be done by entering:
 ```
-cd Desktop
 git clone https://github.com/saakethkoka/ForexArbitrage.git
 ```
 Following this, you will need to run the program. 
+```
+cd ForexArbitrage
+mkdir executable
+cd executable
+cmake3 ..
+make
+./a.out excelFile.csv
+```

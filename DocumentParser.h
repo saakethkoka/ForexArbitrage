@@ -7,9 +7,10 @@
 #pragma once
 #include "Currency.h"
 #include <sstream>
+#include <cassert>
 #include <fstream>
-#include "DSAdjacencyList.h"
 #include <vector>
+#include "DSAdjacencyList.h"
 
 
 class DocumentParser {
