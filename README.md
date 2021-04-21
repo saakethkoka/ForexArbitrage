@@ -26,5 +26,6 @@ After entering these commands into the terminal, you will be prompted to enter a
 ### More Information:
 
 https://en.wikipedia.org/wiki/Triangular_arbitrage
+
 https://www.investopedia.com/terms/forex/f/forex-arbritrage.asp
 
