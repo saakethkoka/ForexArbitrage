@@ -1,7 +1,7 @@
 //
 // Created by Saaketh Koka on 4/13/21.
 //
-
+#pragma once
 #include <string>
 #include <vector>
 #include "DocumentParser.h"
