@@ -20,7 +20,7 @@ public:
     Pathfinder(const std::string& inputFile); //constructor
   //  ~Pathfinder();
     void findPath(DLListNode<Currency>*& node); //This generates values for the bestROI and bestPath
-    void printPath(int amount = 1); //This generates the output for the program
+    double printPath(double amount = 1, double prevProfit = 0); //This generates the output for the program
     double getBestROI();
 
 };

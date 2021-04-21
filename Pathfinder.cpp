@@ -65,14 +65,16 @@ bool Pathfinder::isInCurrPath(Currency& c) {
     return false;
 }
 
-void Pathfinder::printPath(int amount) {
+double Pathfinder::printPath(double amount, double prevProfit) {
     double curr = amount;
     for(int i = 0; i < bestPath.getSize(); i++){
       //  std::cout << bestPath.at(i) << std::endl;
       curr *= bestPath.at(i).get_ratio();
       std::cout << curr << " " << bestPath.at(i).get_name() << std::endl;
     }
-    std::cout << "Your profit is: $" << (bestROI-1) * amount << std::endl;
+    double profit = (bestROI-1) * amount  + prevProfit;
+    std::cout << "Your profit is: $" << profit<< std::endl;
+    return profit;
 }
 
 bool Pathfinder::isBestPath() { //Runs in O(n) time
