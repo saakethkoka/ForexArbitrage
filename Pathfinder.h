@@ -21,7 +21,7 @@ public:
   //  ~Pathfinder();
     void findPath(DLListNode<Currency>*& node); //This generates values for the bestROI and bestPath
     void printPath(int amount = 1); //This generates the output for the program
-
+    double getBestROI();
 
 };
 

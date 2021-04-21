@@ -94,3 +94,7 @@ bool Pathfinder::isBestPath() { //Runs in O(n) time
     }
     return false;
 }
+
+double Pathfinder::getBestROI() {
+    return bestROI;
+}
