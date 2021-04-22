@@ -22,6 +22,7 @@ make
 ```
 Alternativly, you can use the g++ compiler to compile the program.
 ```
+g++ -o ForexArbitrage main.cpp Runner.cpp Currency.cpp DocumentParser.cpp Pathfinder.cpp
 
 ```
 
