@@ -20,6 +20,11 @@ cd executable
 cmake ..
 make
 ```
+Alternativly, you can use the g++ compiler to compile the program.
+```
+
+```
+
 Finally to execute the program you will need to execute the executable with a command line argument for a properly formatted csv file. An example of this is given below. (Please note that for users of the Linux operating system an absolute path to the file is needed).
 ```
 ./ForexArbitrage excelFile3.csv
