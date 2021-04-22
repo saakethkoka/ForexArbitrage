@@ -7,13 +7,20 @@
 Runner::Runner(std::string input) {
     std::cout << "Hello Good Sir,\n" << "how much would you like to invest today?\n" << "$";
     std::string holder;
-    double amount;
+    std::string amount;
+    double amountDouble;
     double profit = 0;
     std::cin >> amount;
+    try{
+        amountDouble = std::stod(amount);
+    } catch (std::invalid_argument){
+        std::cout << "Shame on you." << std::endl;
+        return;
+    }
     do{
         Pathfinder pf(input);
-        profit = pf.printPath(amount,profit);
-        amount *= pf.getBestROI();
+        profit = pf.printPath(amountDouble,profit);
+        amountDouble *= pf.getBestROI();
         std::cout << "Would you like to reinvest? (Y/N)" << std::endl;
         std::cin >> holder;
     } while(holder == "Y" || holder == "y");

@@ -32,6 +32,7 @@ Finally to execute the program you will need to execute the executable with a co
 ```
 After entering these commands into the terminal, you will be prompted to enter a value to invest. Enter an integer quantity. 
 
+
 ### More Information:
 
 https://en.wikipedia.org/wiki/Triangular_arbitrage

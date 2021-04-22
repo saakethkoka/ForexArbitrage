@@ -6,6 +6,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <stdexcept>
 #include "Pathfinder.h"
 class Runner {
     public:
