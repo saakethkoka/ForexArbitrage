@@ -30,7 +30,7 @@ g++ -o ForexArbitrage main.cpp Runner.cpp Currency.cpp DocumentParser.cpp Pathfi
 
 Finally to execute the program you will need to execute the executable with a command line argument for a properly formatted csv file. An example of this is given below. (Please note that for users of the Linux operating system an absolute path to the file is needed).
 ```
-./ForexArbitrage ExampleData/ExampleData.csv
+./ForexArbitrage ExampleData/ExampleData1.csv
 ```
 After entering these commands into the terminal, you will be prompted to enter a value to invest. Enter an integer quantity to this prompt.
 
